@@ -167,6 +167,11 @@ def main():
             ret_val, frame = cap.read()
             meta, res = predictor.inference(frame)
             predictor.visualize(res, meta, cfg.class_names, 0.35)
+            dt = time.time() - timeStamp
+            fps = 1/dt 
+            fpsReport = .9*fpsReport + .1*fps
+            print("FPS: "+ str(fpsReport))
+            timeStamp = time.time()
             ch = cv2.waitKey(1)
             if ch == 27 or ch == ord('q') or ch == ord('Q'):
                 break
