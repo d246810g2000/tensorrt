@@ -1,0 +1,7 @@
+numpy
+torch==1.4.0+cpu; python_version>="3" and platform_machine=="x86_64" and sys.platform=="linux"
+torchvision==0.5.0; python_version>="3" and platform_machine=="x86_64" and sys.platform=="linux"
+torch==1.2.0+cpu; python_version=="2.7" and platform_machine=="x86_64" and sys.platform=="linux2"
+torchvision==0.2.1; python_version=="2.7" and platform_machine=="x86_64" and sys.platform=="linux2"
+Pillow==6.2.2
+pycuda
