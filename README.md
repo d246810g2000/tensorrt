@@ -1,4 +1,4 @@
-# tensorrt
+# Nanodet on tensorrt
 先安裝一些相依套件，並下載 nanodet 的 repo
 ```
 $ pip3 install Cython termcolor numpy tensorboard pycocotools matplotlib pyaml opencv-python tqdm
