@@ -47,7 +47,7 @@ $ wget https://raw.githubusercontent.com/d246810g2000/tensorrt/main/build_engine
 $ python3 build_engine.py -o nanodet.onnx -t nanodet.trt
 ```
 
-接著我們就可以來 inference 了，試試用 tensorrt 優化後的 trt_demo.py，為了方便起見我直接將 nanodet.trt 的輸出轉換成 torch.tensor 再進行後處理，結果如下，FPS 在 5 左右。
+接著我們就可以來 inference 了，試試用 tensorrt 優化後的 trt_demo.py，為了方便起見我直接將 nanodet.trt 的輸出轉換成 torch.tensor 再進行後處理，結果如下，FPS 在 9 左右。
 
 ```
 # trt_demo.py 需要 import common
