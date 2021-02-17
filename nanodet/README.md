@@ -56,4 +56,4 @@ $ wget https://raw.githubusercontent.com/d246810g2000/tensorrt/main/nanodet/trt_
 $ python3 demo/trt_demo.py csicam --config config/nanodet-m.yml --model nanodet.trt
 ```
 
-![](https://i.imgur.com/MC90zhc.png)
+![](https://miro.medium.com/max/861/0*xJN7GPeVir-qQk8x.png)
