@@ -86,8 +86,8 @@ class Predictor(object):
         output_shapes = [(1, 80, 40, 40), (1, 32, 40, 40), (1, 80, 20, 20), (1, 32, 20, 20), (1, 80, 10, 10), (1, 32, 10, 10)]
         cls_score1, bbox_pred1, cls_score2, bbox_pred2, cls_score3, bbox_pred3 = [output.reshape(shape) for output, shape in zip(trt_outputs, output_shapes)] 
         
-        cls_scores = [torch.from_numpy(cls_score1), torch.from_numpy(cls_score2), torch.from_numpy(cls_score3)]
-        bbox_preds = [torch.from_numpy(bbox_pred1), torch.from_numpy(bbox_pred2), torch.from_numpy(bbox_pred3)]
+        cls_scores = [torch.from_numpy(cls_score1).cuda(0), torch.from_numpy(cls_score2).cuda(0), torch.from_numpy(cls_score3).cuda(0)]
+        bbox_preds = [torch.from_numpy(bbox_pred1).cuda(0), torch.from_numpy(bbox_pred2).cuda(0), torch.from_numpy(bbox_pred3).cuda(0)]
         results = self.model.head.post_process((cls_scores, bbox_preds), meta)
         print('decode time: {:.3f}s'.format((time.time() - time2)), end=' | ')
         return meta, results
